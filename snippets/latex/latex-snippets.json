@@ -45,12 +45,12 @@
     },
     "Display Math — \\[ … \\]": {
         "prefix": "$$",
-        "body": ["\\[", "\t$TM_SELECTED_TEXT$1", "\\]"],
+        "body": ["\\[", "\t$1", "\\]"],
         "description": "Display Math"
     },
     "Inline Math — \\$ … \\$": {
         "prefix": "mk",
-        "body": ["\\$", "$TM_SELECTED_TEXT$1", "\\$"],
+        "body": ["\\$", "$1", "\\$"],
         "description": "Inline Math"
     },
     "Theorem": {
