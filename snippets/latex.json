@@ -110,21 +110,6 @@
         "body": "\\Big|",
         "description": "Big |"
     },
-    "bigcup": {
-        "prefix": "@+",
-        "body": "\\bigcup",
-        "description": "bigcup"
-    },
-    "bigcap": {
-        "prefix": "@-",
-        "body": "\\bigcap",
-        "description": "bigcap"
-    },
-    "nonumber": {
-        "prefix": "@,",
-        "body": "\\nonumber",
-        "description": "nonumber"
-    },
     "equation": {
         "prefix": "BEQ",
         "body": "\\begin{equation}\n\t${0:${TM_SELECTED_TEXT}}\n\\end{equation}",
@@ -204,11 +189,6 @@
         "prefix": "BTP",
         "body": "\\begin{tikzpicture}\n\t${0:${TM_SELECTED_TEXT}}\n\\end{tikzpicture}",
         "description": "tikzpicture"
-    },
-    "set font size": {
-        "prefix": "fontsize",
-        "body": "${1|\\Huge,\\huge,\\LARGE,\\Large,\\large,\\normalsize,\\small,\\footnotesize,\\scriptsize,\\tiny|}",
-        "description": "Select a font size"
     },
     "textnormal": {
         "prefix": "FNO",
@@ -330,15 +310,15 @@
         "body": "\\delta",
         "description": "delta"
     },
-    "epsilon": {
-        "prefix": "@e",
-        "body": "\\epsilon",
-        "description": "epsilon"
-    },
     "varepsilon": {
-        "prefix": "@ve",
+        "prefix": "@e",
         "body": "\\varepsilon",
         "description": "varepsilon"
+    },
+    "epsilon": {
+        "prefix": "@ve",
+        "body": "\\epsilon",
+        "description": "epsilon"
     },
     "phi": {
         "prefix": "@f",

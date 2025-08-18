@@ -14,15 +14,6 @@
         ],
         "description": "Cases"
     },
-    "Chapter": {
-        "prefix": "cha",
-        "body": [
-            "\\chapter{$1}\\label{chap:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}} % (fold)",
-            "${0:$TM_SELECTED_TEXT}",
-            "% chapter $1 (end)"
-        ],
-        "description": "Chapter"
-    },
     "Description": {
         "prefix": "desc",
         "body": [
@@ -56,6 +47,11 @@
         "prefix": "$$",
         "body": ["\\[", "\t$TM_SELECTED_TEXT$1", "\\]"],
         "description": "Display Math"
+    },
+    "Inline Math — \\$ … \\$": {
+        "prefix": "mk",
+        "body": ["\\$", "$TM_SELECTED_TEXT$1", "\\$"],
+        "description": "Inline Math"
     },
     "Theorem": {
         "prefix": "theorem",
@@ -98,51 +94,6 @@
             "$0"
         ],
         "description": "Add a proof"
-    },
-    "Algorithm": {
-        "prefix": "algo",
-        "body": [
-            "% \\usepackage{algorithm,algorithmicx,algpseudocode}",
-            "\\begin{algorithm}",
-            "\t\\floatname{algorithm}{${1:Algorithm}}",
-            "\t\\algrenewcommand\\algorithmicrequire{\\textbf{${2:Input: }}}",
-            "\t\\algrenewcommand\\algorithmicensure{\\textbf{${3:Output: }}}",
-            "\t\\caption{$4}\\label{alg:$5}",
-            "\t\\begin{algorithmic}[1]",
-            "\t\t\\Require \\$input\\$",
-            "\t\t\\Ensure \\$output\\$",
-            "\t\t$6",
-            "\t\t\\State \\textbf{return} \\$state\\$",
-            "\t\\end{algorithmic}",
-            "\\end{algorithm}",
-            "$0"
-        ],
-        "description": "Add an algorithm"
-    },
-    "Algorithm:State": {
-        "prefix": "state",
-        "body": ["\\State $1"],
-        "desciption": "Add an statement of algorithm"
-    },
-    "Algorithm:If": {
-        "prefix": "if",
-        "body": ["\\If{$1}", "\\ElsIf{$2}", "\\Else", "\\EndIf"],
-        "desciption": "Add an if statement of algorithm"
-    },
-    "Algorithm:For": {
-        "prefix": "for",
-        "body": ["\\For{i=0:$1}", "\t\\State $0", "\\EndFor"],
-        "desciption": "Add an for statement of algorithm"
-    },
-    "Algorithm:While": {
-        "prefix": "while",
-        "body": ["\\While{$1}", "\t\\State $0", "\\EndWhile"],
-        "desciption": "Add an for statement of algorithm"
-    },
-    "Algorithm:Ref": {
-        "prefix": "algo:ref",
-        "body": ["${1:Algorithm}~\\ref{algo:$2}$0"],
-        "desciption": "Ref for Algorithm"
     },
     "Figure:Ref": {
         "prefix": "figure:ref",
@@ -187,30 +138,6 @@
         ],
         "description": "Paragraph"
     },
-    "Part": {
-        "prefix": "part",
-        "body": [
-            "\\part{${1:part name}}\\label{prt:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}} % (fold)",
-            "${0:$TM_SELECTED_TEXT}",
-            "% part $1 (end)"
-        ],
-        "description": "Part"
-    },
-    "Region Start": {
-        "prefix": "#region",
-        "body": ["%#Region $0"],
-        "description": "Folding Region Start"
-    },
-    "Region End": {
-        "prefix": "#endregion",
-        "body": ["%#Endregion"],
-        "description": "Folding Region End"
-    },
-    "Section:Ref": {
-        "prefix": "section:ref",
-        "body": ["${1:Section}~\\ref{sec:$2}$0"],
-        "description": "Section Reference"
-    },
     "Split": {
         "prefix": "spl",
         "body": ["\\begin{split}", "\t$0", "\\end{split}"],
@@ -224,15 +151,6 @@
             "% section $1 (end)"
         ],
         "description": "Section"
-    },
-    "Sub Paragraph": {
-        "prefix": "subp",
-        "body": [
-            "\\subparagraph{$1}\\label{subp:${1/([a-zA-Z]+)|([^a-zA-Z]+)/${1:/downcase}${2:+_}/g}} % (fold)",
-            "${0:$TM_SELECTED_TEXT}",
-            "% subparagraph $1 (end)"
-        ],
-        "description": "Sub Paragraph"
     },
     "Sub Section": {
         "prefix": "sub",
@@ -256,15 +174,6 @@
         "prefix": "table:ref",
         "body": ["${1:Table}~\\ref{tab:$2}$0"],
         "description": "Table Reference"
-    },
-    "Tabular": {
-        "prefix": "tab",
-        "body": [
-            "\\\\begin{${1:t}${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}{${2:c}}",
-            "$0${2/((?<=[clr])([ |]*(c|l|r)))|./(?1: & )/g}",
-            "\\\\end{${1:t}${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}"
-        ],
-        "description": "Tabular"
     },
     "\\begin{}…\\end{}": {
         "prefix": "begin",
@@ -372,16 +281,6 @@
         "prefix": "enumerate",
         "body": ["\\\\begin{enumerate}", "\t\\item $0", "\\\\end{enumerate}"],
         "description": "Add a enumerate"
-    },
-    "Compactitem": {
-        "prefix": "compactitem",
-        "body": [
-            "\\begin{compactitem}",
-            "\t\\item $1",
-            "\\end{compactitem}",
-            "$0"
-        ],
-        "description": "Add a compactitem (from package paralist)"
     },
     "Cite": {
         "prefix": "cite",
