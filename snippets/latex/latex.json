@@ -507,7 +507,7 @@
         "prefix": "SSP",
         "body": "\\subparagraph{${1:${TM_SELECTED_TEXT}}}",
         "description": "subparagraph"
-    }
+    },
     "Theorem": {
         "prefix": "theorem",
         "body": [
@@ -648,5 +648,5 @@
         "prefix": "cite",
         "body": ["\\cite{$1}$0"],
         "description": "Add a cite"
-    },
+    }
 }
