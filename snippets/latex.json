@@ -1,4 +1,14 @@
 {
+    "Header" : {
+        "prefix": "header",
+        "body": ["\\documentclass[subject = {$1}, tag = {$2}]{note}", "" ,"\\begin{document}", "\t$0", "\\end{document}"],
+        "description": "Adds the header"
+    },
+    "Header2" : {
+        "prefix": "skeleton",
+        "body": ["\\documentclass[subject = {$1}, tag = {$2}]{note}", "" ,"\\begin{document}", "\t$0", "\\end{document}"],
+        "description": "Adds the header"
+    },
     "Display Math — \\[ … \\]": {
         "prefix": "$$",
         "body": ["\\[", "\t$1", "\\]"],
